@@ -9,13 +9,12 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    @IBOutlet weak var pressButton: UIButton!
-    @IBOutlet weak var counterLabelOfPress: UILabel!
-    var count = 0
+    @IBOutlet weak private var pressButton: UIButton!
+    @IBOutlet weak private var counterLabelOfPress: UILabel!
+    private var count = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
         counterLabelOfPress.text = "Значение счетчика: 0"
     }
     
@@ -24,7 +23,7 @@ class ViewController: UIViewController {
         
       }
 
-    @IBAction func buttonDidPress(_ sender: Any) {
+    @IBAction private func buttonDidPress(_ sender: Any) {
         count += 1
         counterLabelOfPress.text = "Значение счетчика: " + String(count)
     }
